@@ -1,0 +1,27 @@
+{
+  "name": "flatiron-cli-users",
+  "version": "0.0.0",
+  "description": "Encapsulated commands for managing users in flatiron CLI apps",
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "contributors": [
+    { "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/flatiron/flatiron-cli-users.git" 
+  },
+  "peerDependencies": {
+    "flatiron": "~0.1.9"
+  },
+  "devDependencies": {
+    "flatiron": "~0.1.9",
+    "cli-easy": "0.1.x",
+    "vows": "0.6.x"
+  },
+  "main": "./lib/flatiron-cli-users",
+  "scripts": {
+    "test": "vows --spec --isolate"
+  },
+  "engines": { "node": ">= 0.6.0" }
+}
+
