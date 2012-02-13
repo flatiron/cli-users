@@ -52,12 +52,24 @@ And the contents of `test-config.json` will be:
 
 ## API Documentation
 
+### Expected API endpoints
+
+``` 
+  TODO: Document this **very** throughly.
+  
+  app.users
+  app.users.create
+  app.users.forgot
+  app.users.update
+  app.users.available
+```
+
 ### Commands exposed
 
 ``` bash
   $ node examples/app.js help users
   help:   `app.js users *` commands allow you to work with new
-  help:   or existing Nodejitsu user accounts
+  help:   or existing user accounts.
   help:   
   help:   app.js users available <username>
   help:   app.js users changepassword
