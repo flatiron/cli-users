@@ -1,9 +1,9 @@
 # flatiron-cli-users
 
-Encapsulated commands for managing users in flatiron CLI apps
+Encapsulated commands for managing users in [`flatiron`][0] CLI apps
 
 ## Example
-At its core `flatiron-cli-users` is a broadway-compatible plugin which can be used by any `flatiron` application:
+At its core [`flatiron-cli-users`][1] is a broadway-compatible plugin which can be used by any [`flatiron`][0] application:
 
 ``` js
   var flatiron = require('flatiron'),
@@ -41,28 +41,39 @@ If you run the above script:
 The output will be:
 
 ```
-  TODO: Put output here.
+  help:   To signup, first you will need to provide a username
+  prompt: username: foobar
+  help:   Next, we will require your email address
+  prompt: email: email@test.com
+  help:   Finally, we will need a password for this account
+  prompt: password: 
+  prompt: confirm password: 
+  info:   You account is now being created
+  info:   Account creation successful!
 ```
 
-And the contents of `test-config.json` will be: 
-
-```
-  TODO: Put result here.
-```
+And the contents of `test-config.json` will have the specified user information. 
 
 ## API Documentation
 
 ### Expected API endpoints
 
-``` 
-  TODO: Document this **very** throughly.
-  
-  app.users
-  app.users.create
-  app.users.forgot
-  app.users.update
-  app.users.available
-```
+This `flatiron` plugin expects an API endpoint to be present on the application through `app.users`. You may implement this API endpoint however you wish. We would suggest using [`resourceful`][2] and [`director`][3], but you are free to use [`express`][4] or other node.js frameworks.
+
+**app.users.auth(function (err, result))**
+Responds with a valid indicating if the current user is authenticated.
+
+**app.users.availabile(username, function (err, result))**
+Responds with a valid indicating if the desired username is available.
+
+**app.users.create(user, function (err, result))**
+Creates a user with the specified properties.
+
+**app.users.update(username, props, function (err, result))**
+Updates the user with `username` with specified `props`.
+
+**app.users.forgot(username, props, function (err, result))**
+Attempts to reset the password for the `username` with the specified `props`
 
 ### Commands exposed
 
@@ -89,13 +100,14 @@ And the contents of `test-config.json` will be:
 ``` js
   {
     //
-    // TODO: Document additional options specific to this plugin.
+    // Set of functions which will execute after named commands: create, login, logout, etc.
     //
-    
+    after: { login: function () { ... } },
+
     //
-    // Set of functions which will execute before named commands: get, set, list, delete
+    // Set of functions which will execute before named commands: create, login, logout, etc.
     //
-    before: { list: function () { ... } }
+    before: { login: function () { ... } }
   }
 ```
 
@@ -120,3 +132,9 @@ Tests are written in vows and give complete coverage of all APIs and storage eng
 
 #### Author: [Charlie Robbins](http://nodejitsu.com)
 #### License: MIT
+
+[0]: http://flatironjs.org
+[1]: http://github.com/flatiron/flatiron-cli-users
+[2]: http://github.com/flatiron/resourceful
+[3]: http://github.com/flatiron/director
+[4]: http://expressjs.org
