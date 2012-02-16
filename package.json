@@ -21,7 +21,7 @@
   },
   "main": "./lib/flatiron-cli-users",
   "scripts": {
-    "test": "vows --spec --isolate"
+    "test": "vows --spec"
   },
   "engines": { "node": ">= 0.6.0" }
 }
