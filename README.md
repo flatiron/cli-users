@@ -1,9 +1,9 @@
 # flatiron-cli-users
 
-Encapsulated commands for managing users in [`flatiron`][0] CLI apps
+Encapsulated commands for managing users in [flatiron][0] CLI apps
 
 ## Example
-At its core [`flatiron-cli-users`][1] is a broadway-compatible plugin which can be used by any [`flatiron`][0] application:
+At its core [flatiron-cli-users][1] is a broadway-compatible plugin which can be used by any [flatiron][0] application:
 
 ``` js
   var flatiron = require('flatiron'),
@@ -58,7 +58,7 @@ And the contents of `test-config.json` will have the specified user information.
 
 ### Expected API endpoints
 
-This `flatiron` plugin expects an API endpoint to be present on the application through `app.users`. You may implement this API endpoint however you wish. We would suggest using [`resourceful`][2] and [`director`][3], but you are free to use [`express`][4] or other node.js frameworks.
+This `flatiron` plugin expects an API endpoint to be present on the application through `app.users`. You may implement this API endpoint however you wish. We would suggest using [resourceful][2] and [director][3], but you are free to use [express][4] or other node.js frameworks.
 
 **app.users.auth(function (err, result))**
 
