@@ -89,8 +89,13 @@ vows.describe('flatiron-cli-users/commands').addBatch({
       .get('/users/jimmy/available')
       .reply(200, { available: true }, { 'x-powered-by': 'Nodejitsu' })
   })
-})/*.addBatch({
-  'users forgot jimmy': runJitsuCommand(
-    mockRequest.mock(helper.mockOptions, helper.mockDefaults)
-      .post('/users/jimmy/forgot'))
-})*/.export(module);
+}).addBatch({
+  'users forgot jimmy': shouldRunCommand(function setup() {
+    app.config.stores.file.file = path.join(__dirname, 'fixtures', 'dot-appconf');
+    app.config.stores.file.loadSync();
+    
+    nock('http://api.flatiron-users.com')
+      .post('/users/jimmy/forgot', { shake: null, 'new-password': '98765' })
+      .reply(200, '', { 'x-powered-by': 'Nodejitsu' })
+  })
+}).export(module);

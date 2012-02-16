@@ -30,8 +30,6 @@ exports.shouldRunCommand = function () {
           argv;
           
       app.argv._ = this.context.name.split(' ')
-      app.config.stores.file.file = path.join(__dirname, 'fixtures', 'dot-appconf');
-      app.config.stores.file.loadSync();
 
       // Pad the output slightly
       console.log('');
