@@ -40,7 +40,7 @@ If you run the above script:
 
 The output will be:
 
-```
+``` bash
   help:   To signup, first you will need to provide a username
   prompt: username: foobar
   help:   Next, we will require your email address
@@ -119,13 +119,15 @@ Attempts to reset the password for the `username` with the specified `props`
 ## Installation
 
 ### Installing npm (node package manager)
-```
-  curl http://npmjs.org/install.sh | sh
+
+``` bash
+  $ curl http://npmjs.org/install.sh | sh
 ```
 
 ### Installing flatiron-cli-users
-```
-  [sudo] npm install flatiron-cli-users
+
+``` bash
+  $ [sudo] npm install flatiron-cli-users
 ```
 
 ## Run Tests
