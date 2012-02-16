@@ -61,18 +61,23 @@ And the contents of `test-config.json` will have the specified user information.
 This `flatiron` plugin expects an API endpoint to be present on the application through `app.users`. You may implement this API endpoint however you wish. We would suggest using [`resourceful`][2] and [`director`][3], but you are free to use [`express`][4] or other node.js frameworks.
 
 **app.users.auth(function (err, result))**
+
 Responds with a valid indicating if the current user is authenticated.
 
 **app.users.availabile(username, function (err, result))**
+
 Responds with a valid indicating if the desired username is available.
 
 **app.users.create(user, function (err, result))**
+
 Creates a user with the specified properties.
 
 **app.users.update(username, props, function (err, result))**
+
 Updates the user with `username` with specified `props`.
 
 **app.users.forgot(username, props, function (err, result))**
+
 Attempts to reset the password for the `username` with the specified `props`
 
 ### Commands exposed
