@@ -98,4 +98,10 @@ vows.describe('flatiron-cli-users/commands').addBatch({
       .post('/users/jimmy/forgot', { shake: null, 'new-password': '98765' })
       .reply(200, '', { 'x-powered-by': 'Nodejitsu' })
   })
+}).addBatch({
+  'users delete jimmy': shouldRunCommand(function setup() {
+    nock('http://api.flatiron-users.com')
+      .delete('/users/jimmy', {})
+      .reply(200, '', { 'x-powered-by': 'Nodejitsu' });
+  })
 }).export(module);
