@@ -1,6 +1,6 @@
 {
   "name": "flatiron-cli-users",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Encapsulated commands for managing users in flatiron CLI apps",
   "author": "Nodejitsu Inc. <info@nodejitsu.com>",
   "maintainers": [
